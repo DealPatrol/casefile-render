@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SignalShield privately checks suspicious messages for scam and impersonation signals in your browser.">
+  <meta name="theme-color" content="#07111f">
+  <title>SignalShield — Private Scam Check</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="SignalShield home">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span>SignalShield</span>
+    </a>
+    <span class="privacy-pill"><span class="status-dot"></span> Runs on your device</span>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="eyebrow">Private fraud triage</div>
+      <h1>Before you reply,<br><span>check the signal.</span></h1>
+      <p class="hero-copy">Paste a suspicious text, email, marketplace message, or DM. SignalShield highlights pressure tactics, payment traps, credential requests, impersonation, and risky links—without uploading the message.</p>
+      <div class="trust-row" aria-label="Privacy features">
+        <span>✓ No account</span><span>✓ No upload</span><span>✓ No paid API</span>
+      </div>
+    </section>
+
+    <section class="analyzer-shell" aria-labelledby="analyzer-title">
+      <div class="panel input-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="step">01</span>
+            <h2 id="analyzer-title">Paste the message</h2>
+          </div>
+          <button id="exampleButton" class="text-button" type="button">Load example</button>
+        </div>
+        <label class="sr-only" for="messageInput">Suspicious message</label>
+        <textarea id="messageInput" maxlength="12000" placeholder="Paste the suspicious message here…"></textarea>
+        <div class="input-footer">
+          <span id="charCount">0 / 12,000</span>
+          <button id="analyzeButton" class="primary-button" type="button">
+            <span>Analyze privately</span><span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="resultsPanel" class="panel results-panel empty" aria-live="polite">
+        <div id="emptyState" class="empty-state">
+          <div class="radar" aria-hidden="true"><span></span></div>
+          <p>Your private risk report will appear here.</p>
+          <small>Analysis uses transparent rules in this browser.</small>
+        </div>
+
+        <div id="resultsContent" hidden>
+          <div class="result-topline">
+            <div>
+              <span class="step">02</span>
+              <h2>Signal report</h2>
+            </div>
+            <span id="riskBadge" class="risk-badge">Review</span>
+          </div>
+          <div class="score-row">
+            <div class="score-ring" id="scoreRing"><strong id="riskScore">0</strong><span>/ 100</span></div>
+            <div><h3 id="riskTitle">Low detected risk</h3><p id="riskSummary"></p></div>
+          </div>
+          <div id="signals" class="signals"></div>
+          <div class="guidance-grid">
+            <article>
+              <h3>Safer next steps</h3>
+              <ul id="nextSteps"></ul>
+            </article>
+            <article>
+              <h3>Verify without replying</h3>
+              <p id="verifyText"></p>
+              <button id="copyVerifyButton" class="secondary-button" type="button">Copy verification note</button>
+            </article>
+          </div>
+          <div id="localAiCard" class="local-ai-card" hidden>
+            <div><span class="ai-dot"></span><strong>On-device AI available</strong></div>
+            <p>Ask your browser's local model for a plain-language explanation. Message text stays on this device.</p>
+            <button id="explainButton" class="secondary-button" type="button">Explain with local AI</button>
+            <div id="aiExplanation" class="ai-explanation" hidden></div>
+          </div>
+          <div class="result-actions">
+            <button id="copyReportButton" class="secondary-button" type="button">Copy report</button>
+            <button id="downloadButton" class="secondary-button" type="button">Download JSON</button>
+            <button id="resetButton" class="text-button" type="button">Check another</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="section-label">What it catches</div>
+      <div class="feature-grid">
+        <article><span>01</span><h3>Pressure</h3><p>Urgency, threats, secrecy, and emotional manipulation.</p></article>
+        <article><span>02</span><h3>Payment traps</h3><p>Gift cards, crypto, wire transfers, and unusual payment demands.</p></article>
+        <article><span>03</span><h3>Identity theft</h3><p>Password, one-time-code, bank, and personal-data requests.</p></article>
+        <article><span>04</span><h3>Impersonation</h3><p>Fake support, government, employer, family, and delivery claims.</p></article>
+      </div>
+    </section>
+
+    <section class="disclaimer">
+      <strong>A second opinion, not a guarantee.</strong>
+      <p>SignalShield can miss sophisticated scams or flag legitimate messages. Never use a phone number or link supplied in a suspicious message; independently find the organization's official contact details.</p>
+    </section>
+  </main>
+
+  <footer><span>SignalShield</span><span>Private by design · Free to use</span></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
